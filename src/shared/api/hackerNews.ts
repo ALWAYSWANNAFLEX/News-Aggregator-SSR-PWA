@@ -16,10 +16,12 @@ type HackerNewsResponse = {
   hits?: HackerNewsHit[];
 };
 
-const HACKER_NEWS_SEARCH_URL = "https://hn.algolia.com/api/v1/search";
+const hackerNewsSearchUrl = "https://hn.algolia.com/api/v1/search";
 
-export async function fetchHackerNewsArticles(query: string): Promise<Article[]> {
-  const url = new URL(HACKER_NEWS_SEARCH_URL);
+export async function fetchHackerNewsArticles(
+  query: string,
+): Promise<Article[]> {
+  const url = new URL(hackerNewsSearchUrl);
   url.searchParams.set("query", query);
   url.searchParams.set("tags", "story");
   url.searchParams.set("hitsPerPage", "12");
@@ -40,7 +42,10 @@ export async function fetchHackerNewsArticles(query: string): Promise<Article[]>
     .map((hit) => ({
       id: hit.objectID,
       title: hit.title ?? hit.story_title ?? "Untitled story",
-      url: hit.url ?? hit.story_url ?? `https://news.ycombinator.com/item?id=${hit.objectID}`,
+      url:
+        hit.url ??
+        hit.story_url ??
+        `https://news.ycombinator.com/item?id=${hit.objectID}`,
       source: "Hacker News",
       author: hit.author ?? "unknown",
       publishedAt: hit.created_at ?? null,

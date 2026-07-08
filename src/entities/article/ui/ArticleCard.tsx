@@ -1,4 +1,5 @@
 import type { Article } from "../model/types";
+import { SaveArticleButton } from "@/features/saveArticle/ui/SaveArticleButton";
 import type { Locale } from "@/shared/i18n/config";
 import type { Dictionary } from "@/shared/i18n/dictionaries";
 
@@ -48,6 +49,7 @@ export function ArticleCard({ article, dictionary, locale }: ArticleCardProps) {
         <span>
           {article.commentsCount} {dictionary.comments}
         </span>
+        <SaveArticleButton article={article} dictionary={dictionary} />
       </footer>
     </article>
   );

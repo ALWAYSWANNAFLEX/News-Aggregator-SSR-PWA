@@ -12,6 +12,7 @@ const dictionaries = {
       title: "News Aggregator",
       description:
         "Первый вертикальный срез: страница остается Server Component, данные приходят из публичного API, а UI организован по FSD.",
+      savedLink: "Сохраненные новости",
       searchLabel: "Тема новостей",
       searchPlaceholder: "technology, react, ai...",
       searchButton: "Искать",
@@ -25,12 +26,25 @@ const dictionaries = {
       emptyTitle: "Ничего не найдено",
       emptyDescription:
         "Попробуй другой запрос, например: react, startup, security.",
+      errorTitle: "Не удалось загрузить новости",
+      errorDescription: "Попробуй обновить страницу или изменить запрос.",
+    },
+    savedPage: {
+      title: "Сохраненные новости",
+      description:
+        "Здесь хранятся статьи, которые ты отметил для чтения позже.",
+      emptyTitle: "Пока ничего не сохранено",
+      emptyDescription:
+        "Вернись к ленте и сохрани интересные материалы.",
+      backToNews: "К ленте новостей",
     },
     article: {
       unknownDate: "Дата неизвестна",
       by: "от",
       points: "очков",
       comments: "комментариев",
+      save: "Сохранить",
+      saved: "Сохранено",
     },
   },
   en: {
@@ -44,6 +58,7 @@ const dictionaries = {
       title: "News Aggregator",
       description:
         "First vertical slice: the page stays a Server Component, data comes from a public API, and UI is organized with FSD.",
+      savedLink: "Saved news",
       searchLabel: "News topic",
       searchPlaceholder: "technology, react, ai...",
       searchButton: "Search",
@@ -57,12 +72,24 @@ const dictionaries = {
       emptyTitle: "No articles found",
       emptyDescription:
         "Try another query, for example: react, startup, security.",
+      errorTitle: "Failed to load news",
+      errorDescription: "Try refreshing the page or changing your query.",
+    },
+    savedPage: {
+      title: "Saved news",
+      description: "Articles you marked for reading later are stored here.",
+      emptyTitle: "No saved articles yet",
+      emptyDescription:
+        "Go back to the news feed and save something worth revisiting.",
+      backToNews: "Back to news",
     },
     article: {
       unknownDate: "Unknown date",
       by: "by",
       points: "points",
       comments: "comments",
+      save: "Save",
+      saved: "Saved",
     },
   },
 } as const;

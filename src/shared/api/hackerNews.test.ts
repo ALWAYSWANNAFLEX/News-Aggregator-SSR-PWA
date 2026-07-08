@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, jest } from "@jest/globals";
-import { fetchHackerNewsArticles } from "./hacker-news";
+import { fetchHackerNewsArticles } from "./hackerNews";
 
 describe("fetchHackerNewsArticles", () => {
   afterEach(() => {

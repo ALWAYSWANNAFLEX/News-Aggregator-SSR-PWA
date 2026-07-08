@@ -1,10 +1,11 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { LocaleSwitcher } from "@/features/locale-switcher/ui/locale-switcher";
+import { LocaleSwitcher } from "@/features/localeSwitcher/ui/LocaleSwitcher";
 import { getDictionary } from "@/shared/i18n/dictionaries";
 import { isLocale } from "@/shared/i18n/config";
-import { NewsFeed } from "@/widgets/news-feed/ui/news-feed";
-import { NewsFeedSkeleton } from "@/widgets/news-feed/ui/news-feed-skeleton";
+import { NewsFeed } from "@/widgets/newsFeed/ui/NewsFeed";
+import { NewsFeedSkeleton } from "@/widgets/newsFeed/ui/NewsFeedSkeleton";
 
 export const dynamic = "force-dynamic";
 
@@ -52,6 +53,13 @@ export default async function Home({ params, searchParams }: HomePageProps) {
               dictionary={dictionary.language}
               query={query}
             />
+
+            <Link
+              className="self-start rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm font-semibold text-ink transition hover:border-accent hover:text-accent"
+              href={`/${locale}/saved`}
+            >
+              {dictionary.home.savedLink}
+            </Link>
 
             <form className="flex gap-2" action={`/${locale}`}>
               <label className="sr-only" htmlFor="query">

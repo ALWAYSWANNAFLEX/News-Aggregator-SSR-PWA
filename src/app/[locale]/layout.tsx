@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { getDictionary } from "@/shared/i18n/dictionaries";
 import { isLocale, locales } from "@/shared/i18n/config";
+import { Providers } from "./Providers";
 
 type LocaleLayoutProps = {
   children: React.ReactNode;
@@ -44,7 +45,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className="h-full antialiased">
-      <body className="min-h-full bg-surface font-sans">{children}</body>
+      <body className="min-h-full bg-surface font-sans">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
